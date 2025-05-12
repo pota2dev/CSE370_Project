@@ -64,14 +64,13 @@ export default function MyPlacesPage() {
         </TableHeader>
         <TableBody>
           {places.map((place) => (
-            // Update: use place.place_id as key and in delete call
             <TableRow key={place.place_id}>
               <TableCell>{place.title}</TableCell>
               <TableCell>{place.location}</TableCell>
               <TableCell>{place.price}</TableCell>
               <TableCell>
                 <div className="flex space-x-2">
-                  <Button variant="outline" onClick={() => alert("Modify action to be implemented")}>
+                  <Button variant="outline" onClick={() => router.push(`/update_place?place_id=${place.place_id}`)}>
                     Modify
                   </Button>
                   <Button variant="destructive" onClick={() => deletePlace(place.place_id)}>

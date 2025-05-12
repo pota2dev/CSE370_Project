@@ -1,1 +1,1 @@
-Booking System
+StayEase: A place booking system

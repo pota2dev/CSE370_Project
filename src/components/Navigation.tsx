@@ -43,7 +43,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-gray-100">
-              Room Booking
+              StayEase
             </Link>
             <div className="hidden md:flex space-x-4">
               <Button asChild variant="link">
