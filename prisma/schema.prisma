@@ -484,14 +484,15 @@ model reviews {
 }
 
 model public_users {
-  user_id                               String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  first_name                            String
-  last_name                             String
-  contact_number                        String?    @db.VarChar(20)
+  user_id                               String     @id @db.Uuid
+  first_name                            String?
+  last_name                             String?
+  contact_number                        String?
   date_of_birth                         DateTime?  @db.Date
   display_photo_url                     String?
   is_host                               Boolean?   @default(false)
-  bookings_bookings_guest_idTousers     bookings[] @relation("bookings_guest_idTousers")
+  created_at                            DateTime?  @default(dbgenerated("'2025-05-12 11:42:58.335039+00'::timestamp with time zone")) @db.Timestamptz(6)
+  updated_at                            DateTime?  @default(dbgenerated("'2025-05-12 13:34:08.006401+00'::timestamp with time zone")) @db.Timestamptz(6)
   messages_messages_from_user_idTousers messages[] @relation("messages_from_user_idTousers")
   messages_messages_to_user_idTousers   messages[] @relation("messages_to_user_idTousers")
   users                                 auth_users @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
